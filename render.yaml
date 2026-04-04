@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: nhms-frontend
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NHMS_BACKEND_ORIGIN
+        value: https://nhms-backend-p9v5.onrender.com
+      - key: NEXT_PUBLIC_BACKEND_API_URL
+        value: https://nhms-backend-p9v5.onrender.com/api
+      - key: NEXT_PUBLIC_SOCKET_URL
+        value: https://nhms-backend-p9v5.onrender.com
